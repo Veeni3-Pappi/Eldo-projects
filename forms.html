@@ -7,19 +7,126 @@
   </head>
   <body>
     <h1> Forms in Html </h1>
-<form> 
-
-
-
-
-  
+<form>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label>
 </form>
-    
+    <br>
+
+<form action="" method="get" class="form-example">
+  <div class="form-example">
+    <label for="name">Enter your name: </label>
+    <input type="text" name="name" id="name" required  placeholder="John Doe"/>
+  </div>
+  <div class="form-example">
+    <label for="email">Enter your email: </label>
+    <input type="email" name="email" id="email" required placeholder="you@example.com"/>
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Subscribe!" />
+  </div>
+</form>
+<br>
+
+<form>
+  <div>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" placeholder="John">
+  </div>
+   <br>
+
+<div>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" placeholder="Doe ">
+  </div>
+  <br>
+<div>
+  <input type="submit" value="Submit">
+</div>
+<br>
+<!-- selection div -->
+<div>
+  <label for="cars">Choose a car:</label>
+  <select name="cars" id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+ <br>
+ <!--Password  Field -->
+ <div>
+  <label for="pass"> Password :</label>
+  <input type="password" id="pass" name="pass" maxlength="12" required>
+</div>
+<br>
+<!-- Email field -->
+<div>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required placeholder="you@example.com"/>
+</div>
+<br>
+<!-- Age input -->
+<div>
+  <label for="age"> Age:</label>
+  <input type="number" id="age" name="age" min="1" max="100">
+</div>
+<br>
+<!-- Date pickers-->
+<div>
+  <label for="jdate">Join Date:</label>
+  <input type="date" id="jdate" name="jdate">
+</div>
+<br>
+<!-- Checkboxes -->
+ <div>
+  <label> </label>
+ </div>
 
 
 
 
 
+<!-- selection div -->
+<div>
+  <label for="OS"> Choose Operating System:</label>
+<select name="OS" id="OS">
+  <option value="windows">Windows</option>
+  <option value="macos">MacOS</option>
+  <option value="linux">Linux</option>
+  <option value="other">Other</option>
+</select>
+</div>
+<br>
+<!-- Radio buttons combined with selection div -->
+ <div>
+<label> Choose your Favorite Phone</label>
+<input type="radio" id="phone1" name="phone" value="iphone">
+<label for="phone1">iPhone</label>
+<input type="radio" id="phone2" name="phone" value="android">
+<label for="phone2">Android</label>
+<select name="Android" id="Phone2"> 
+<option value="samsung">Samsung</option>
+<option value="google">Google Pixel</option>
+<option value="oneplus">OnePlus</option>
+<option value="Vivo">Vivo</option>
+<option value="Oppo">Oppo</option>
+
+</select>
+
+
+
+ </div>
+
+</form>
+<br>
+
+<a href="tables.html" target="_blank"> Click here to view different products</a>
 
   </body>
 

@@ -1,0 +1,48 @@
+.lora{
+    font-family: young serif;
+    font-size: 25px;
+    color: rgba(3, 2, 2, 0.926);
+    font-weight: lighter;
+}
+h1{
+    font-family: young serif;
+    font-size: 20px;
+    color: rgba(169, 120, 5, 0.985);
+    font-weight: lighter;
+
+}
+h3{
+    color: rgba(90, 5, 101, 0.926);
+    font-family: outfit, sans-serif;
+}
+.list1{
+    font-family: outfit, sans-serif;
+    color: rgba(18, 17, 15, 0.901);
+    font-weight: normal;
+    font-size: 15px;
+}
+.p1{
+    font-family: outfit, sans-serif;
+    color: rgba(3, 2, 2, 0.926);
+    font-weight: normal;
+    font-size: 15px;
+}
+.list2{
+    font-family: outfit, sans-serif;
+    color: rgba(18, 17, 15, 0.901);
+    font-weight: normal;
+    font-size: 15px;
+}
+.list3{
+    font-family: outfit, sans-serif;
+    color: rgba(18, 17, 15, 0.901);
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.Preps{
+    background-color: rgba(241, 197, 221, 0.557);
+}
+.ingri{
+    font-family: outfit, sans-serif;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Omelette Recipe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ede8e0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 16px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .card img.hero {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .card-body {
+      padding: 32px;
+    }
+
+    h1.title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    p.description {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .prep-box {
+      background-color: #f8f0f5;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .prep-box h2 {
+      font-family: 'Playfair Display', serif;
+      color: #6b1a3a;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .prep-box ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .prep-box ul li {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .prep-box ul li span {
+      font-weight: 600;
+    }
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      color: #8b2a2a;
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+    }
+
+    ul.ingredients {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 28px;
+    }
+
+    ul.ingredients li {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    ol.instructions {
+      padding-left: 20px;
+      margin-bottom: 28px;
+    }
+
+    ol.instructions li {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    ol.instructions li span {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-body">
+      <img
+        class="hero"
+        src="https://images.unsplash.com/photo-1510693206972-df098062cb71?w=800"
+        alt="Omelette"
+      />
+
+      <br/>
+
+      <h1 class="title">Simple Omelette Recipe</h1>
+      <p class="description">
+        An easy and quick dish, perfect for any meal. This classic omelette combines
+        beaten eggs cooked to perfection, optionally filled with your choice of cheese,
+        vegetables, or meats.
+      </p>
+
+      <div class="prep-box">
+        <h2>Preparation time</h2>
+        <ul>
+          <li><span>Total:</span> Approximately 10 minutes</li>
+          <li><span>Preparation:</span> 5 minutes</li>
+          <li><span>Cooking:</span> 5 minutes</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title">Ingredients</h2>
+      <ul class="ingredients">
+        <li>2–3 large eggs</li>
+        <li>Salt, to taste</li>
+        <li>Pepper, to taste</li>
+        <li>1 tablespoon of butter or oil</li>
+        <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+      </ul>
+
+      <h2 class="section-title">Instructions</h2>
+      <ol class="instructions">
+        <li><span>Beat the eggs:</span> In a bowl, beat the eggs with a pinch of salt and pepper until blended.</li>
+        <li><span>Heat the pan:</span> Place a non-stick pan over medium heat and add butter or oil.</li>
+        <li><span>Cook the omelette:</span> Pour in the egg mixture. Tilt the pan to spread evenly.</li>
+        <li><span>Add fillings:</span> Once edges are set, add your fillings on one half.</li>
+        <li><span>Fold and serve:</span> Fold in half and slide onto a plate. Serve immediately.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

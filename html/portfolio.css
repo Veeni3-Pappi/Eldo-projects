@@ -1,4 +1,4 @@
-/* 1. Global Reset & Base Styles */
+/* 1. Global Reset & Base Styles */ 
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     padding: 0 4%;
 }
 
-/* 2. Header and Navigation */
+/* 2. Header and Navigation 
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -50,7 +50,7 @@ body {
     font-weight: 600;
 }
 
-/* 3. Intro Section */
+/* 3. Intro Section 
 .intro-section {
     text-align: center;
     padding: 60px 0 40px 0;
@@ -69,7 +69,7 @@ body {
     font-size: 1rem;
 }
 
-/* 4. The Smart Gallery Grid */
+/* 4. The Smart Gallery Grid 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -192,5 +192,155 @@ body {
     }
     .intro-section h2 {
         font-size: 1.5rem;
+    }
+}
+/* ==========================================
+   Additions for About & Services Pages
+   ========================================== */
+
+/* --- About Page Styles --- */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    padding: 60px 0;
+    min-height: 60vh;
+}
+
+.about-image-wrapper {
+    flex: 1;
+    height: 500px;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    flex: 1.2;
+}
+
+.about-content h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.lead-text {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #606060;
+    margin-bottom: 15px;
+}
+
+.about-cta {
+    margin-top: 30px;
+}
+
+
+/* --- Services Page Styles --- */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Spacing between distinct categories */
+    padding-bottom: 80px;
+}
+
+.service-row {
+    display: flex;
+    align-items: center;
+    gap: 8%;
+}
+
+/* Switches position of photo and text for a dynamic, alternating pattern */
+.service-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-text h3 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.service-text p {
+    color: #606060;
+    margin-bottom: 15px;
+}
+
+.price-tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 2px;
+}
+
+/* Dual image grid layout inside services */
+.service-gallery {
+    flex: 1.3;
+}
+
+.twin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    height: 320px;
+}
+
+.twin-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+
+/* --- Responsive Adjustments for Subpages --- */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px 0;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+        height: 400px;
+    }
+
+    .services-list {
+        gap: 60px;
+    }
+
+    .service-row, .service-row.reverse {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .service-gallery {
+        width: 100%;
+    }
+    
+    .twin-grid {
+        height: 240px;
     }
 }

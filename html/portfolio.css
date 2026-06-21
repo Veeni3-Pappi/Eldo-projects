@@ -84,7 +84,7 @@ body {
 /* Image Container to maintain constraints */
 .image-wrapper {
     width: 100%;
-    height: 380px; /* Uniform height for clean alignment */
+    height: 420px; /* Uniform height for clean alignment */
     overflow: hidden;
     background-color: #eee;
     margin-bottom: 15px;
@@ -141,7 +141,46 @@ body {
     background-color: #404040;
 }
 
-/* 6. Responsive Adjustments for Mobile Screens */
+/* 6. Landscape Orientation Fix */
+@media (orientation: landscape) and (max-height: 600px) {
+    .image-wrapper {
+        height: 300px; /* Optimized height for landscape */
+    }
+    
+    .gallery-grid {
+        gap: 20px;
+        padding-bottom: 40px;
+    }
+    
+    .intro-section {
+        padding: 30px 0 20px 0;
+    }
+    
+    .intro-section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Further optimization for very short landscape (mobile phones) */
+@media (orientation: landscape) and (max-height: 500px) {
+    .image-wrapper {
+        height: 240px;
+    }
+    
+    .gallery-grid {
+        gap: 15px;
+    }
+    
+    .gallery-item h3 {
+        font-size: 0.85rem;
+    }
+    
+    .gallery-item p {
+        font-size: 0.7rem;
+    }
+}
+
+/* 7. Responsive Adjustments for Mobile Screens */
 @media (max-width: 600px) {
     .main-header, .main-footer {
         flex-direction: column;

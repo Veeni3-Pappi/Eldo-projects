@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
-    
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>ALEX KIJIJI</h1>
+            <p>Visual Storyteller</p>
+        </div>
+        <nav class="nav-links">
+            <a href="#gallery" class="active">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro-section">
+            <h2>Capturing moments, telling stories.</h2>
+            <p>A curated collection of recent street, portrait, and landscape photography.</p>
+        </section>
+
+        <section id="gallery" class="gallery-grid">
+            
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Urban exploration street photography" loading="lazy">
+                </div>
+                <h3>Urban Exploration</h3>
+                <p>Curated Street Series</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Ocean sunset landscape" loading="lazy">
+                </div>
+                <h3>Coastal Light</h3>
+                <p>Golden Hour Horizons</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Studio portrait photography" loading="lazy">
+                </div>
+                <h3>Portraits</h3>
+                <p>The Human Form</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Alex Kijiji. All rights reserved.</p>
+        <div class="cta-button">
+            <a href="mailto:hello@example.com" class="btn">Book a Session</a>
+        </div>
+    </footer>
+
 </body>
 </html>

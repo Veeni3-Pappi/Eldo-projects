@@ -1,0 +1,157 @@
+/* 1. Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcfbfa; /* Soft off-white to make photos pop */
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding: 0 4%;
+}
+
+/* 2. Header and Navigation */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #eae6e1;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.logo p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #707070;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #707070;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* 3. Intro Section */
+.intro-section {
+    text-align: center;
+    padding: 60px 0 40px 0;
+}
+
+.intro-section h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.intro-section p {
+    color: #707070;
+    font-size: 1rem;
+}
+
+/* 4. The Smart Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+/* Image Container to maintain constraints */
+.image-wrapper {
+    width: 100%;
+    height: 380px; /* Uniform height for clean alignment */
+    overflow: hidden;
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Key property: keeps aspect ratio without distortion */
+    transition: transform 0.5s ease;
+}
+
+/* Subtle hover interaction */
+.gallery-item:hover .image-wrapper img {
+    transform: scale(1.03);
+}
+
+.gallery-item h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.gallery-item p {
+    font-size: 0.8rem;
+    color: #707070;
+}
+
+/* 5. Footer & CTA */
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    border-top: 1px solid #eae6e1;
+    font-size: 0.85rem;
+    color: #707070;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #404040;
+}
+
+/* 6. Responsive Adjustments for Mobile Screens */
+@media (max-width: 600px) {
+    .main-header, .main-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+    .intro-section h2 {
+        font-size: 1.5rem;
+    }
+}

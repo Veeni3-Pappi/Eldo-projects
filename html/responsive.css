@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(143, 116, 6);
+}
+h1{
+    font-size: 50px;
+}
+/*media query- traget screen size*/
+@media(max-width:500px ){
+body{
+    background-color: blueviolet;
+}
+h1{
+    font-size: 35px;
+}
+}

@@ -13,3 +13,12 @@ h1{
     font-size: 35px;
 }
 }
+/*....*/
+#menu-btn{
+    display:blok;
+}
+#desktop-nav{
+    display:none
+}
+
+/*differenciate between inline block and inline-block, use code for illustration*/

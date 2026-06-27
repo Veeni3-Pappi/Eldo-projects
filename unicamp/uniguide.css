@@ -1,0 +1,368 @@
+ /* --- CSS RESET & GLOBAL STYLES --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul, ol {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* --- THEME COLORS --- */
+    :root {
+      --primary-maroon: #a31d24;
+      --dark-maroon: #7a1217;
+      --text-dark: #222;
+      --text-light: #666;
+      --bg-dark: #1a1a1a;
+    }
+
+    /* --- COMMON COMPONENTS --- */
+    .btn-red {
+      background-color: var(--primary-maroon);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-red:hover {
+      background-color: var(--dark-maroon);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-size: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary-maroon);
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+    .view-all {
+      color: var(--primary-maroon);
+      font-weight: bold;
+    }
+
+    /* --- 1. HEADER --- */
+    .top-bar {
+      background-color: var(--primary-maroon);
+      color: white;
+      font-size: 0.85rem;
+      padding: 8px 0;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .top-links a {
+      margin-left: 15px;
+    }
+    main-header {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary-maroon);
+      text-align: center;
+    }
+    .main-nav ul {
+      display: flex;
+    }
+    .main-nav li {
+      margin: 0 15px;
+    }
+    .main-nav a {
+      font-weight: 600;
+    }
+
+    /* --- 2. HERO --- */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1920/800?random=1') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    /* --- 3. ABOUT SECTION --- */
+    .about-section {
+      padding: 80px 0;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    /* --- 4. ACTION BAR --- */
+    .action-bar {
+      background-color: var(--primary-maroon);
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .action-bar h2 {
+      margin-bottom: 20px;
+    }
+    .action-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .action-btn {
+      background: white;
+      color: var(--primary-maroon);
+      padding: 15px 30px;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    /* --- 5. STUDENT STORIES --- */
+    .stories-section {
+      padding: 80px 0;
+      background: white;
+    }
+    .stories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .story-list li {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .story-num {
+      font-size: 1.8rem;
+      color: var(--primary-maroon);
+      font-weight: bold;
+      margin-right: 15px;
+      float: left;
+    }
+    .story-meta {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* --- 6. EXPLORE PROGRAMS --- */
+    .programs-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/800?random=2') no-repeat center center/cover;
+      padding: 100px 0;
+      color: white;
+    }
+    .programs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    .programs-left h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .programs-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .program-block {
+      background-color: var(--primary-maroon);
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .program-block:hover {
+      background-color: var(--dark-maroon);
+    }
+
+    /* --- 7. NEWS SECTION --- */
+    .news-section {
+      padding: 80px 0;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .news-card {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .news-content {
+      padding: 20px;
+    }
+    .news-tag {
+      font-size: 0.75rem;
+      color: var(--primary-maroon);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .news-card h3 {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+    .news-meta {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    /* --- 8. EVENTS SECTION --- */
+    .events-section {
+      padding: 80px 0;
+      background: white;
+    }
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .event-card {
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .date-box {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      min-width: 60px;
+      height: fit-content;
+    }
+    .date-box .day {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-maroon);
+    }
+    .event-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .event-info p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* --- 9. PARTNER LOGOS --- */
+    .partners {
+      padding: 40px 0;
+      background: #f0f0f0;
+      text-align: center;
+    }
+    .partners-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      opacity: 0.6;
+    }
+
+    /* --- 10. FOOTER --- */
+    footer {
+      background-color: var(--bg-dark);
+      color: #ccc;
+      padding: 60px 0 20px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* --- RESPONSIVENESS --- */
+    @media (max-width: 768px) {
+      .about-grid, .stories-grid, .programs-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+    }

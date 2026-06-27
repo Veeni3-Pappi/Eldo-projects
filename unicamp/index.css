@@ -23,6 +23,7 @@ body{
     gap: 30px;
     padding: 30px 70px;
     color: white ;
+    font-size: large;
 }
 .hero-bg-container img{
     width: 150px;
@@ -45,6 +46,23 @@ h1{
         height: 300px;  
         width:auto;
         margin: top 100px;
+    }
+    .intro {
+      padding: 80px 0;
+    }
+    .intro-bsm{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color:#666 ;
+      margin-bottom: 20px;
     }
     .cta-button{
         width:250px;
@@ -73,9 +91,37 @@ h1{
       gap: 50px;
       align-items: center;
     }
-    .main-nav{
+    .nav-container{
         display: flex;
-        justify-content: space-evenly
-        ;
-
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
     }
+    .main-nav a {
+        display: flex;
+        flex-direction: row;
+    }
+.stry-section{
+    margin-top: 50px;
+}
+.cta-buttons-t2{
+    background-color: white;
+    width:250px;
+    height:50px;
+    color: #AB162C;
+    font-weight: bold;
+    font-size: large;
+      border-radius: 4px;
+
+}
+ .Action-bar-container {
+      background-color:#AB162C;
+      color:white;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .action-bar h2 {
+      margin-bottom: 20px;
+    }
+
+    

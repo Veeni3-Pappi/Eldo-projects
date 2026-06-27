@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniCamp Recreation</title>
+  <style>
+    /* --- CSS RESET & GLOBAL STYLES --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul, ol {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* --- THEME COLORS --- */
+    :root {
+      --primary-maroon: #a31d24;
+      --dark-maroon: #7a1217;
+      --text-dark: #222;
+      --text-light: #666;
+      --bg-dark: #1a1a1a;
+    }
+
+    /* --- COMMON COMPONENTS --- */
+    .btn-red {
+      background-color: var(--primary-maroon);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-red:hover {
+      background-color: var(--dark-maroon);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-size: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 2px;
+      background-color: var(--primary-maroon);
+      margin-left: 15px;
+      vertical-align: middle;
+    }
+    .view-all {
+      color: var(--primary-maroon);
+      font-weight: bold;
+    }
+
+    /* --- 1. HEADER --- */
+    .top-bar {
+      background-color: var(--primary-maroon);
+      color: white;
+      font-size: 0.85rem;
+      padding: 8px 0;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .top-links a {
+      margin-left: 15px;
+    }
+    main-header {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary-maroon);
+      text-align: center;
+    }
+    .main-nav ul {
+      display: flex;
+    }
+    .main-nav li {
+      margin: 0 15px;
+    }
+    .main-nav a {
+      font-weight: 600;
+    }
+
+    /* --- 2. HERO --- */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1920/800?random=1') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    /* --- 3. ABOUT SECTION --- */
+    .about-section {
+      padding: 80px 0;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    /* --- 4. ACTION BAR --- */
+    .action-bar {
+      background-color: var(--primary-maroon);
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .action-bar h2 {
+      margin-bottom: 20px;
+    }
+    .action-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .action-btn {
+      background: white;
+      color: var(--primary-maroon);
+      padding: 15px 30px;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    /* --- 5. STUDENT STORIES --- */
+    .stories-section {
+      padding: 80px 0;
+      background: white;
+    }
+    .stories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .story-list li {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .story-num {
+      font-size: 1.8rem;
+      color: var(--primary-maroon);
+      font-weight: bold;
+      margin-right: 15px;
+      float: left;
+    }
+    .story-meta {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* --- 6. EXPLORE PROGRAMS --- */
+    .programs-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/800?random=2') no-repeat center center/cover;
+      padding: 100px 0;
+      color: white;
+    }
+    .programs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    .programs-left h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .programs-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .program-block {
+      background-color: var(--primary-maroon);
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .program-block:hover {
+      background-color: var(--dark-maroon);
+    }
+
+    /* --- 7. NEWS SECTION --- */
+    .news-section {
+      padding: 80px 0;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .news-card {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .news-content {
+      padding: 20px;
+    }
+    .news-tag {
+      font-size: 0.75rem;
+      color: var(--primary-maroon);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .news-card h3 {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+    .news-meta {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    /* --- 8. EVENTS SECTION --- */
+    .events-section {
+      padding: 80px 0;
+      background: white;
+    }
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .event-card {
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .date-box {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      min-width: 60px;
+      height: fit-content;
+    }
+    .date-box .day {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-maroon);
+    }
+    .event-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .event-info p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* --- 9. PARTNER LOGOS --- */
+    .partners {
+      padding: 40px 0;
+      background: #f0f0f0;
+      text-align: center;
+    }
+    .partners-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      opacity: 0.6;
+    }
+
+    /* --- 10. FOOTER --- */
+    footer {
+      background-color: var(--bg-dark);
+      color: #ccc;
+      padding: 60px 0 20px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* --- RESPONSIVENESS --- */
+    @media (max-width: 768px) {
+      .about-grid, .stories-grid, .programs-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <div>Social Links</div>
+        <div class="top-links">
+          <a href="#">Students</a>
+          <a href="#">Staffs</a>
+          <a href="#">Alumni</a>
+          <a href="#">Visit</a>
+          <a href="#">Media</a>
+        </div>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="container nav-container">
+        <div class="logo">UNICAMP<br><span style="font-size:0.6rem; letter-spacing:2px;">SINCE 1960</span></div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Academies</a></li>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Pages</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>WELCOME TO UNICAMP</h1>
+      <p>A place with diverse nationalities, cultures and ideas</p>
+      <a href="#" class="btn-red">Start your application</a>
+    </div>
+  </section>
+
+  <section class="about-section container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://picsum.photos/600/400?random=3" alt="Students studying">
+      </div>
+      <div class="about-text">
+        <h2>UniCamp College of Business and Management</h2>
+        <p>UniCamp has established a reputation for excellence in business and management education, providing high-quality, industry-responsive programs relevant to the national and global marketplace.</p>
+        <p>Studying business at UniCamp is a great way to enhance your career. In today's competitive environment, professionals need the skills to adapt to an ever-changing business world.</p>
+        <a href="#" class="btn-red">Discover UniCamp →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="action-bar">
+    <div class="container">
+      <h2>Let's Get Started</h2>
+      <div class="action-grid">
+        <a href="#" class="action-btn">Find The Right Program</a>
+        <a href="#" class="action-btn">Request Information</a>
+        <a href="#" class="action-btn">Start Your Application</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stories-section container">
+    <div class="section-header">
+      <h2 class="section-title">Student Stories</h2>
+      <a href="#" class="view-all">More student stories →</a>
+    </div>
+    <div class="stories-grid">
+      <div class="story-image">
+        <img src="https://picsum.photos/600/350?random=4" alt="Featured student">
+      </div>
+      <div class="story-list">
+        <ol>
+          <li>
+            <div class="story-num">01</div>
+            <h3>My Experience with General Education</h3>
+            <span class="story-meta">Morgan McLaughlin — Graduate Student</span>
+          </li>
+          <li>
+            <div class="story-num">02</div>
+            <h3>My top 5 UniCamp moments</h3>
+            <span class="story-meta">Denise Henderson — Undergraduate Student</span>
+          </li>
+          <li>
+            <div class="story-num">03</div>
+            <h3>Should you consider taking a gap year</h3>
+            <span class="story-meta">Charlie Doyle — Graduate Student</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="programs-section">
+    <div class="container programs-grid">
+      <div class="programs-left">
+        <h2>Explore Majors & Programs</h2>
+        <p>Choose from 16 undergraduate and graduate majors tailored to prepare global leaders.</p>
+      </div>
+      <div class="programs-links">
+        <a href="#" class="program-block">Undergraduate programs</a>
+        <a href="#" class="program-block">Graduate programs</a>
+        <a href="#" class="program-block">Continuing education programs</a>
+        <a href="#" class="program-block">Research at UniCamp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="news-section container">
+    <div class="section-header">
+      <h2 class="section-title">What's Happening @ UniCamp College</h2>
+      <a href="#" class="view-all">View all news →</a>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <img src="https://picsum.photos/400/250?random=5" alt="News item">
+        <div class="news-content">
+          <span class="news-tag">Alumni / Research</span>
+          <h3>Autism rates have increased and show differences in ethnic communities</h3>
+          <div class="news-meta"><span>Owen Christ</span><time>Mar 17, 2021</time></div>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="https://picsum.photos/400/250?random=6" alt="News item">
+        <div class="news-content">
+          <span class="news-tag">Student Life</span>
+          <h3>Most students say their mental health suffered in pandemic</h3>
+          <div class="news-meta"><span>Owen Christ</span><time>Jan 25, 2021</time></div>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="https://picsum.photos/400/250?random=7" alt="News item">
+        <div class="news-content">
+          <span class="news-tag">Career / Research</span>
+          <h3>Most students pleased with their digital learning setups</h3>
+          <div class="news-meta"><span>Owen Christ</span><time>Jan 23, 2021</time></div>
+        </div>
+      </article>
+      <article class="news-card">
+        <img src="https://picsum.photos/400/250?random=8" alt="News item">
+        <div class="news-content">
+          <span class="news-tag">Research / Student Life</span>
+          <h3>Gender inequality in higher education persists globally</h3>
+          <div class="news-meta"><span>Owen Christ</span><time>Jan 22, 2021</time></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="events-section container">
+    <div class="section-header">
+      <h2 class="section-title">UniCamp Events</h2>
+      <a href="#" class="view-all">View all events →</a>
+    </div>
+    <div class="events-grid">
+      <article class="event-card">
+        <div class="date-box"><div class="day">19</div><div class="month">APR</div></div>
+        <div class="event-info">
+          <h3>Roadmap to the Sustainable Development Goals</h3>
+          <p>2:30 PM - 3:30 PM</p><p>United States</p>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="date-box"><div class="day">28</div><div class="month">DEC</div></div>
+        <div class="event-info">
+          <h3>Research in Distance Education (RIDE) conference 2021</h3>
+          <p>3:30 PM - 4:30 PM</p><p>United Kingdom</p>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="date-box"><div class="day">20</div><div class="month">AUG</div></div>
+        <div class="event-info">
+          <h3>The Role of Conflict in a Political Account of Common Goods</h3>
+          <p>10:30 AM - 11:30 AM</p><p>United States</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <aside class="partners">
+    <div class="container partners-list">
+      <span>[EDWARD ENATION]</span>
+      <span>[COMPLUTENSE]</span>
+      <span>[EBOULEMENT]</span>
+      <span>[JUSTICIAR LIBRARY]</span>
+      <span>[CANBERRA]</span>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="logo" style="color: white; text-align: left;">UNICAMP</div>
+        <p style="margin-top: 15px; font-size: 0.85rem;">© 2021 UniCamp. All Rights Reserved.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <p><strong>800 388 80 90</strong></p>
+        <p style="font-size: 0.85rem; margin-top: 10px;">3210 Barnes Avenue Cincinnati,<br>Ohio 45244</p>
+      </div>
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#">Students</a></li>
+          <li><a href="#">Faculty & Staff</a></li>
+          <li><a href="#">Alumni</a></li>
+          <li><a href="#">Media Relations</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Designed with Semantic HTML5 & CSS Grid</p>
+    </div>
+  </footer>
+
+</body>
+</html>

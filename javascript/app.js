@@ -5,7 +5,7 @@
 
  // var and let are used for data that can change over time while const i used for data that doesnt chnage
 
- var userName =" casual ace"
+ var userName ="casual ace"
  let email= "typeshi@gmail.com"
  let isKenyan = true 
  const PI = 3.14159
@@ -18,6 +18,14 @@
     price: 1000,
     inStock: true
 }
+
+
+console.log(userName)
+console.log(email)
+console.log(isKenyan)
+console.log(PI)
+console.log(users)
+console.log(product)
 
 // data types - the type of data that can be stored in a variable
 

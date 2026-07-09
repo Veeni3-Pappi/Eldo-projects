@@ -18,4 +18,39 @@ if(!(age < 40)){
     console.log("Mature adult")
 }
 
-    // explore the truth table
+
+
+if(height < 140){
+    console.log("this person is short");
+}
+else {
+    console.log("this person is tall");
+}
+
+
+
+
+
+// create a marks variable, then write an if else statement  that grades the marks into A, B, C, D, F based on the following criteria
+
+const marks = 82
+ if ( marks >= 80){
+    console.log("A grade")
+ }
+ else if(marks >= 60){
+    console.log("B grade")
+ }
+ else if(marks >= 40){
+    console.log("C grade")
+ }
+ else{
+    console.log("E grade")
+ }
+
+
+
+
+
+
+
+// explore the truth table

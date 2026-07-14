@@ -50,7 +50,18 @@ const marks = 82
 
 
 
+//loops- used to repeat a block os code multiple times. iften used to iterrate over arrays or perform a task until a certain conditioon is met
+
+
+
+for (let indexNumber = 0; indexNumber < 100; indexNUmber + 3) {
+   console.log(indexNumber + "is a multiple of 3");
+   console.log("The marsk above is " + marks);
+}
+
+
 
 
 
 // explore the truth table
+// write a loop thhat prints the numbers from 1 to 100 but for multiples of 3 print "fizz"  instead of the number for the multiples of 5 print "buzz". for numbers which are multiples of both 3 ANDN 5 PRINT "FIZZBUZZ."combine loops with if statements

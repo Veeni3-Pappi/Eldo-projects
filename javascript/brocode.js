@@ -10,4 +10,4 @@ x = 123
 
 //
 // console.log(x)
-window.alert("welcome")
+//window.alert("welcome")

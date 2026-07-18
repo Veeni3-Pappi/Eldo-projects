@@ -37,10 +37,18 @@ console.log(product)
 //compsarison operators ==, ===, !=, !==, >, <, >=, <=
 
 //logical operators &&, ||, !
-
+// % modulus operator
+// two asteriscks (** ) to the power 
 // assignment operators =, +=, -=, *=, /=
 // task - explain variable naming conventions in js.
 // task2 
 // differenciate between == and ===
 //task 3 ... explain logical operators and how they are used in js 
 
+//augmented operators
+/*examples of augmented operators
++= 1
+*= 2
+-= 2
+/= 2
+%= 2*/
